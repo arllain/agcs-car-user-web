@@ -7,31 +7,50 @@ import getValidationErrors from '../../utils/getValidationErrors';
 import { Container, Content, BackGround } from './styles';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
+import { useAuth } from '../../context/AuthContext';
+
+interface SignInFormData {
+  login: string;
+  password: string;
+}
 
 const SignIn: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
 
-  const handleSubmit = useCallback(async (data: object) => {
-    try {
-      formRef.current?.setErrors({});
+  const { user, signIn } = useAuth();
 
-      const schema = Yup.object().shape({
-        login: Yup.string()
-          .required('Login is required')
-          .min(5, 'Minimum password length: 5 characters'),
-        password: Yup.string().min(5, 'Minimum password length: 6 characters'),
-      });
+  const handleSubmit = useCallback(
+    async (data: SignInFormData) => {
+      try {
+        formRef.current?.setErrors({});
 
-      await schema.validate(data, {
-        abortEarly: false,
-      });
-    } catch (err) {
-      if (err instanceof Yup.ValidationError) {
-        const errors = getValidationErrors(err);
-        formRef.current?.setErrors(errors);
+        const schema = Yup.object().shape({
+          login: Yup.string()
+            .required('Login is required')
+            .min(4, 'Minimum password length: 4 characters'),
+          password: Yup.string().min(
+            5,
+            'Minimum password length: 6 characters',
+          ),
+        });
+
+        await schema.validate(data, {
+          abortEarly: false,
+        });
+
+        await signIn({
+          login: data.login,
+          password: data.password,
+        });
+      } catch (err) {
+        if (err instanceof Yup.ValidationError) {
+          const errors = getValidationErrors(err);
+          formRef.current?.setErrors(errors);
+        }
       }
-    }
-  }, []);
+    },
+    [signIn],
+  );
 
   return (
     <Container>

@@ -36,7 +36,7 @@ const SignUp: React.FC = () => {
         birthday: Yup.string().required('BirthDate  is requirer'),
         login: Yup.string()
           .required('Login  is required')
-          .min(5, 'Minimum login length: 5 characters'),
+          .min(4, 'Minimum login length: 4 characters'),
         password: Yup.string().min(5, 'Minimum password length: 6 characters'),
         phone: Yup.string()
           .required('Phone  is required')
