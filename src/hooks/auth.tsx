@@ -4,6 +4,11 @@ import api from '../services/api';
 interface User {
   id: string;
   login: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  birthday: string;
+  phone: string;
   avatar_url: string;
 }
 
