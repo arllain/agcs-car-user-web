@@ -3,6 +3,7 @@ import { FiLogIn, FiUserPlus, FiLock } from 'react-icons/fi';
 import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
+import { Link } from 'react-router-dom';
 import getValidationErrors from '../../utils/getValidationErrors';
 import { Container, Content, BackGround } from './styles';
 import Input from '../../components/Input';
@@ -48,6 +49,7 @@ const SignIn: React.FC = () => {
         if (err instanceof Yup.ValidationError) {
           const errors = getValidationErrors(err);
           formRef.current?.setErrors(errors);
+          return;
         }
 
         addToast({
@@ -77,10 +79,10 @@ const SignIn: React.FC = () => {
           <Button type="submit">Sign In now</Button>
         </Form>
 
-        <a href="signup">
+        <Link to="/signup">
           <FiUserPlus />
           Sign Up
-        </a>
+        </Link>
       </Content>
       <BackGround />
     </Container>

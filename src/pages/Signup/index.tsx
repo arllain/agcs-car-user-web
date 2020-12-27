@@ -11,6 +11,7 @@ import {
   FiLogIn,
   FiCalendar,
 } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 import getValidationErrors from '../../utils/getValidationErrors';
 import { Container, Content, BackGround } from './styles';
 import Input from '../../components/Input';
@@ -75,10 +76,10 @@ const SignUp: React.FC = () => {
           <Button type="submit">Sign Up now</Button>
         </Form>
 
-        <a href="criar">
+        <Link to="/">
           <FiArrowLeft />
           Back to Sign In
-        </a>
+        </Link>
       </Content>
     </Container>
   );
