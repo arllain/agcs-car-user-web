@@ -37,7 +37,7 @@ const Profile: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const { addToast } = useToast();
   const history = useHistory();
-  const { user } = useAuth();
+  const { user, signOut } = useAuth();
 
   const handleSubmit = useCallback(
     async (data: ProfileFormData) => {
@@ -71,12 +71,13 @@ const Profile: React.FC = () => {
 
         await api.put(`/api/users/${user.id}`, data);
 
+        signOut();
         history.push('/');
 
         addToast({
           type: 'success',
           title: 'Profile updated succesful',
-          description: 'Profile updated succesful',
+          description: 'Profile updated succesful, you need to log in again',
         });
       } catch (error) {
         if (error instanceof Yup.ValidationError) {
