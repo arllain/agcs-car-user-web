@@ -30,7 +30,7 @@ const DashBoard: React.FC = () => {
             </div>
             <div>
               <Link to="/profile">
-                <strong>Edit profile</strong>
+                <strong>You can edit your profile here </strong>
               </Link>
             </div>
           </Profile>
