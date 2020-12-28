@@ -69,8 +69,7 @@ const Profile: React.FC = () => {
 
         await schema.validate(data, { abortEarly: false });
 
-        console.log(`/users/${user.id}`);
-        await api.put(`/users/${user.id}`, data);
+        await api.put(`/api/users/${user.id}`, data);
 
         history.push('/');
 
