@@ -4,14 +4,7 @@ import { Link } from 'react-router-dom';
 import { Container, Header, HeaderContent, Profile } from './styles';
 import { useAuth } from '../../hooks/auth';
 import avatar from '../../assets/avatar.png';
-
-// interface Car {
-//   id: string;
-//   year: string;
-//   licencePlate: string;
-//   model: string;
-//   color: string;
-// }
+import Car from '../Car';
 
 const DashBoard: React.FC = () => {
   const { signOut, user } = useAuth();
@@ -30,7 +23,7 @@ const DashBoard: React.FC = () => {
             </div>
             <div>
               <Link to="/profile">
-                <strong>You can edit your profile here </strong>
+                <strong>Update your profile here </strong>
               </Link>
             </div>
           </Profile>
@@ -40,6 +33,7 @@ const DashBoard: React.FC = () => {
           </button>
         </HeaderContent>
       </Header>
+      <Car />
     </Container>
   );
 };
