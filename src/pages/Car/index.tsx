@@ -30,7 +30,7 @@ const Car: React.FC = () => {
       .then(response => {
         setCars(response.data);
       });
-  }, []);
+  }, [headers]);
 
   function handleAdd() {
     history.push('/addCar');
