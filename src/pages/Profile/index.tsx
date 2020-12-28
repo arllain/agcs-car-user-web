@@ -93,7 +93,7 @@ const Profile: React.FC = () => {
         });
       }
     },
-    [addToast, history, user.id],
+    [addToast, history, user.id, signOut],
   );
 
   return (
