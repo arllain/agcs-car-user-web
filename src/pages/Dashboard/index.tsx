@@ -1,18 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { FiPower } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import { Container, Header, HeaderContent, Profile } from './styles';
 import { useAuth } from '../../hooks/auth';
 import avatar from '../../assets/avatar.png';
-import api from '../../services/api';
 
-interface Car {
-  id: string;
-  year: string;
-  licencePlate: string;
-  model: string;
-  color: string;
-}
+// interface Car {
+//   id: string;
+//   year: string;
+//   licencePlate: string;
+//   model: string;
+//   color: string;
+// }
 
 const DashBoard: React.FC = () => {
   const { signOut, user } = useAuth();
@@ -41,7 +40,6 @@ const DashBoard: React.FC = () => {
           </button>
         </HeaderContent>
       </Header>
-      {/* <Car /> */}
     </Container>
   );
 };
