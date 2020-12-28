@@ -2,8 +2,6 @@
   ReactJS App for User Car web
 </h3>
 
-<p align="center">Schedule Haircuts & Shaves services</p>
-
 <p align="center">
   <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/arllain/gobarber-web?color=%23FF9000">
 
