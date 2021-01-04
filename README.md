@@ -60,6 +60,8 @@ Technologies that I used to develop this web client
 ### Requirements
 
 - Please have this application's [API](https://github.com/arllain/agcs-car-user-web) running
+- To run locally you need to create a .env file in root project . You can use the .env-example, so you just make a copy of it and rename it.
+
 
 **Clone the project and access the folder**
 
@@ -75,6 +77,9 @@ $ yarn
 
 # Start the client
 $ yarn start
+
+** The api must be running for this app communicate with it. **
+
 
 ```
 
