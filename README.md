@@ -63,6 +63,13 @@ Technologies that I used to develop this web client
 - To run locally you need to create a .env file in root project . You can use the .env-example, so you just make a copy of it and rename it.
 
 
+
+<p align="left">
+  <img alt="Layout" src=".github/dot_env_file.png" width="600">
+</p>
+
+
+
 **Clone the project and access the folder**
 
 ```bash
