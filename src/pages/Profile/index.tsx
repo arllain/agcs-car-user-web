@@ -132,7 +132,7 @@ const Profile: React.FC = () => {
           <Input name="firstName" icon={FiUser} placeholder="First Name" />
           <Input name="lastName" icon={FiUser} placeholder="Last Name" />
           <Input name="email" icon={FiMail} placeholder="E-mail" />
-          <Input name="birthday" icon={FiCalendar} placeholder="Birthday" />
+          <Input name="birthday" icon={FiCalendar} placeholder="1980-03-25" />
           <Input name="login" icon={FiLogIn} placeholder="Login" />
           <Input
             name="password"
@@ -141,7 +141,7 @@ const Profile: React.FC = () => {
             placeholder="Password"
           />
 
-          <Input name="phone" icon={FiPhone} placeholder="Phone Number" />
+          <Input name="phone" icon={FiPhone} placeholder="81998883214" />
           <Button type="submit">Update profile</Button>
         </Form>
       </Content>
